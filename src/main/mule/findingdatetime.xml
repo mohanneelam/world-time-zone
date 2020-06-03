@@ -12,6 +12,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:request-config>
 	<flow name="findingdatetimeFlow" doc:id="aed19803-e670-4958-9438-2d62a84d5634" >
 		<http:listener doc:name="Listener" doc:id="4ebcb453-7bff-47a3-ac8b-e1090080beb8" config-ref="HTTP_Listener_config" path="/{region}/{city}"/>
+		<logger level="INFO" doc:name="Logger" doc:id="556da61f-ea82-403e-8bfa-6a846974c577" message="=============the flow has just started==============="/>
 		<http:request method="GET" doc:name="Request" doc:id="48f0d4c4-a574-4b7a-996e-c5a916369d0f" config-ref="HTTP_Request_configuration" path="/{area}/{location}">
 			<http:uri-params ><![CDATA[#[output application/java
 ---
