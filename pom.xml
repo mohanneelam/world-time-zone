@@ -28,7 +28,36 @@
 				<configuration>
 				</configuration>
 			</plugin>
-		</plugins>
+			<plugin>
+  <groupId>org.mule.tools.maven</groupId>
+  <artifactId>mule-maven-plugin</artifactId>
+  <version>${mule.maven.plugin.version}</version>
+  <extensions>true</extensions>
+  <configuration>
+<cloudHubDeployment>
+      <uri>https://anypoint.mulesoft.com/</uri>
+      <muleVersion>${app.runtime}</muleVersion>
+      <username>Nmohan229</username>
+      <password>Nmohan229</password>
+      <applicationName>findingdatetime</applicationName>
+      <environment>Sandbox</environment>
+      <!-- <region>eu-west-1</region> -->
+      <workers>1</workers>
+	  <workerType>Micro</workerType>
+	 <!-- <artifact>path/to/file</artifact> -->
+</cloudHubDeployment>
+  </configuration>
+  <executions>
+  <execution>
+    <id>deploy</id>
+    <phase>deploy</phase>
+    <goals>
+      <goal>deploy</goal>
+    </goals>
+  </execution>
+</executions>
+</plugin>
+</plugins>
 	</build>
 
 	<dependencies>
